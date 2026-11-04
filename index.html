@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portafolio | Ana Patricia Sanchez Castro</title>
+    <meta name="description" content="Portafolio de evidencias de un estudiante de Ingeniería en Tecnologías de la Información e Innovación Digital.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+    <a class="salto" href="#contenido"><span lang="es">Saltar al contenido</span><span lang="en">Skip to content</span><span lang="fr">Aller au contenu</span></a>
+
+    <header class="header">
+        <div class="header__barra">
+            <a class="logo" href="#inicio">Ana Sánchez</a>
+
+            <input type="checkbox" id="menu-check" class="sr-only">
+            <label for="menu-check" class="menu-btn"><span aria-hidden="true">☰</span><span class="sr-only">Menú</span></label>
+
+            <nav class="menu" aria-label="Principal">
+                <ul>
+                    <li><a href="#inicio"><span lang="es">Inicio</span><span lang="en">Home</span><span lang="fr">Accueil</span></a></li>
+                    <li><a href="#sobre-mi"><span lang="es">Sobre mí</span><span lang="en">About me</span><span lang="fr">À propos</span></a></li>
+                    <li><a href="#proyectos"><span lang="es">Proyectos</span><span lang="en">Projects</span><span lang="fr">Projets</span></a></li>
+                    <li><a href="#habilidades"><span lang="es">Habilidades</span><span lang="en">Skills</span><span lang="fr">Compétences</span></a></li>
+                    <li><a href="#certificaciones"><span lang="es">Certificaciones</span><span lang="en">Certifications</span><span lang="fr">Certifications</span></a></li>
+                    <li><a href="#cv"><span lang="es">CV</span><span lang="en">Résumé</span><span lang="fr">CV</span></a></li>
+                    <li><a href="#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span><span lang="fr">Contact</span></a></li>
+                </ul>
+                <div class="ajustes">
+                    <fieldset class="idiomas">
+                        <legend class="sr-only">Idioma / Language / Langue</legend>
+                        <input type="radio" name="idioma" id="lang-es" class="sr-only" checked><label for="lang-es">ES</label>
+                        <input type="radio" name="idioma" id="lang-en" class="sr-only"><label for="lang-en">EN</label>
+                        <input type="radio" name="idioma" id="lang-fr" class="sr-only"><label for="lang-fr">FR</label>
+                    </fieldset>
+                    <input type="checkbox" id="modo-oscuro" class="sr-only">
+                    <label for="modo-oscuro" class="tema" title="Modo claro / oscuro">
+                        <span class="luna" aria-hidden="true">🌙</span><span class="sol" aria-hidden="true">☀️</span><span class="sr-only">Modo claro / oscuro</span>
+                    </label>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido">
+        <section id="inicio" class="hero">
+            <div class="hero__texto">
+                <h1><span lang="es">Hola, soy</span><span lang="en">Hi, I'm</span><span lang="fr">Bonjour, je suis</span> <span class="resalte">Ana Patricia Sánchez Castro</span></h1>
+                <p class="hero__rol"><span lang="es">Estudiante de Ingeniería en Tecnologías de la Información e Innovación Digital
+                </span><span lang="en">Student of Information Technology and Digital Innovation Engineering
+                </span><span lang="fr">Étudiant en ingénierie des technologies de l'information et de l'innovation numérique</span></p>
+                <p>
+                    <span lang="es">Diseño y construyo soluciones digitales claras, accesibles y optimizadas para cualquier dispositivo. Apasionada por conectar tecnología con una gran experiencia de usuario. ¡Explora mis proyectos!</span>
+                    <span lang="en">I design and build clear, accessible, and optimized digital solutions for any device. Passionate about connecting technology with a great user experience. Explore my projects!</span>
+                    <span lang="fr">Je conçois et développe des solutions numériques claires, accessibles et optimisées pour tout type d'appareil. Passionnée par l'alliance entre technologie et expérience utilisateur de qualité. Découvrez mes projets !</span>
+                </p>
+                <p class="botones">
+                    <a class="btn" href="#proyectos"><span lang="es">Ver mis proyectos</span><span lang="en">View my projects</span><span lang="fr">Voir mes projets</span></a>
+                    <a class="btn btn--borde" href="#contacto"><span lang="es">Contáctame</span><span lang="en">Contact me</span><span lang="fr">Me contacter</span></a>
+                </p>
+            </div>
+            <figure class="hero__foto">
+                <img src="imagenes/anasanchez_perfil.jfif" alt="Fotografía profesional de Tu Nombre Completo" width="400" height="480">
+            </figure>
+        </section>
+
+        <section id="sobre-mi" class="seccion">
+            <h2><span lang="es">Sobre mí</span><span lang="en">About me</span><span lang="fr">À propos de moi</span></h2>
+            <div class="sobre">
+                <p>
+                    <span lang="es">Soy estudiante de Ingeniería en TI enfocada en el desarrollo de software, la creación de aplicaciones web funcionales y la gestión de bases de datos. Me apasiona estructurar lógica de negocio sólida y transformar requerimientos técnicos en soluciones digitales eficientes y accesibles.</span>
+                    <span lang="en">I am an IT Engineering student with a focus on software development, the creation of functional web applications, and database management. I am passionate about structuring robust business logic and transforming technical requirements into efficient, accessible digital solutions.</span>
+                    <span lang="fr">Je suis étudiante en ingénierie informatique, spécialisée dans le développement logiciel, la création d'applications web fonctionnelles et la gestion de bases de données. Je suis passionnée par la conception d'une logique métier solide et par la transformation d'exigences techniques en solutions numériques efficaces et accessibles.</span>
+                </p>
+                <p>
+                    <span lang="es">Mi objetivo es integrarme a proyectos reales de desarrollo backend o full-stack donde pueda aplicar mis conocimientos y aprender tecnologías modernas. En mi tiempo libre continuo fortaleciendo mis habilidades resolviendo retos de programación y explorando nuevas ideas para sitios web.</span>
+                    <span lang="en">My goal is to join real-world backend or full-stack development projects where I can apply my knowledge and learn modern technologies. In my free time, I continue to strengthen my skills by solving programming challenges and exploring new ideas for websites.</span>
+                    <span lang="fr">Mon objectif est d'intégrer des projets réels de développement backend ou full-stack, où je pourrai mettre en pratique mes connaissances et apprendre des technologies modernes. Durant mon temps libre, je continue à renforcer mes compétences en relevant des défis de programmation et en explorant de nouvelles idées pour des sites web.</span>
+                </p>
+            </div>
+        </section>
+
+        <section id="proyectos" class="seccion">
+            <h2><span lang="es">Proyectos</span><span lang="en">Projects</span><span lang="fr">Projets</span></h2>
+            <div class="rejilla">
+                <article class="tarjeta">
+                    <img src="imagenes/proyecto_dessertpop.png" alt="Captura del proyecto 1" width="400" height="220" loading="lazy">
+                    <div class="tarjeta__cuerpo">
+                        <h3><span lang="es">DessertPop</span><span lang="en">DessertPop</span><span lang="fr">DessertPop</span></h3>
+                        <p>
+                            <span lang="es">Prototipo de tienda web de utensilios e insumos de repostería con catálogo de productos y mapa de ubicación.</span>
+                            <span lang="en">Prototype of an online store for baking tools and supplies, featuring a product catalog and a location map.</span>
+                            <span lang="fr">Prototype de boutique en ligne d'ustensiles et d'ingrédients de pâtisserie, avec catalogue de produits et plan de localisation.</span>
+                        </p>
+                        <ul class="etiquetas" aria-label="Tecnologías"><li>HTML</li><li>CSS</li></ul>
+                        <p class="botones">
+                            <a class="btn btn--chico" href="#prototipo-tienda"><span lang="es">Ver prototipo</span><span lang="en">View prototype</span><span lang="fr">Voir le prototype</span></a>
+                            <a class="btn btn--chico btn--borde" href="https://github.com/Anasancz/DessertPop" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span><span lang="fr">Voir le code</span></a>
+                        </p>
+                    </div>
+                </article>
+                <article class="tarjeta">
+                    <img src="imagenes/logo_workinon.png" alt="Captura del proyecto 2" width="400" height="220" loading="lazy">
+                    <div class="tarjeta__cuerpo">
+                        <h3><span lang="es">WorkinOn</span><span lang="en">WorkinOn</span><span lang="fr">WorkinOn</span></h3>
+                        <p>
+                            <span lang="es">WorkinOn es el prototipo de un sitio web gratuito en el que los estudiantes de una universidad con ideas innovadoras pero sin el conocimiento suficiente para llevarlas a cabo puedan solicitar compañeros de proyecto con las capacidades requeridas para desarrollar su idea.</span>
+                            <span lang="en">WorkinOn is a prototype for a free website where university students with innovative ideas but lacking the necessary knowledge to execute them can seek out project partners who possess the skills required to develop their ideas.</span>
+                            <span lang="fr">WorkinOn est le prototype d'un site web gratuit sur lequel des étudiants universitaires, porteurs d'idées innovantes mais dépourvus des connaissances nécessaires pour les concrétiser, peuvent rechercher des partenaires de projet possédant les compétences requises pour développer leur idée.</span>
+                        </p>
+                        <ul class="etiquetas" aria-label="Tecnologías"><li>Figma</li><li>UX/UI</li></ul>
+                        <p class="botones">
+                            <a class="btn btn--chico" href="https://www.figma.com/design/twuwo8mKrroYmArU07i8o7/Prototipo?node-id=0-1&t=kL46U9hKxOXMREHF-1" target="_blank" rel="noopener"><span lang="es">Ver prototipo</span><span lang="en">View prototype</span><span lang="fr">Voir le prototype</span></a>
+                            <a class="btn btn--chico btn--borde" href="https://github.com/Anasancz/WorkinOn" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span><span lang="fr">Voir le code</span></a>
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="habilidades" class="seccion">
+            <h2><span lang="es">Habilidades técnicas</span><span lang="en">Technical skills</span><span lang="fr">Compétences techniques</span></h2>
+            <div class="rejilla rejilla--chica">
+                <article class="tarjeta tarjeta--simple">
+                    <h3>Frontend</h3>
+                    <ul class="etiquetas"><li>HTML5</li><li>CSS3</li><li>Responsive</li></ul>
+                </article>
+                <article class="tarjeta tarjeta--simple">
+                    <h3><span lang="es">Backend y datos</span><span lang="en">Backend and data</span><span lang="fr">Backend et données</span></h3>
+                    <ul class="etiquetas"><li>Java</li><li>MySQL</li><li>Python</li></ul>
+                </article>
+                <article class="tarjeta tarjeta--simple">
+                    <h3><span lang="es">Herramientas</span><span lang="en">Tools</span><span lang="fr">Outils</span></h3>
+                    <ul class="etiquetas"><li>Git</li><li>VS Code</li><li>Figma</li></ul>
+                </article>
+                <article class="tarjeta tarjeta--simple">
+                    <h3><span lang="es">Idiomas</span><span lang="en">Languages</span><span lang="fr">Langues</span></h3>
+                    <ul class="etiquetas">
+                        <li><span lang="es">Español: nativo</span><span lang="en">Spanish: native</span><span lang="fr">Espagnol : langue maternelle</span></li>
+                        <li><span lang="es">Inglés: intermedio</span><span lang="en">English: intermediate</span><span lang="fr">Anglais : intermédiaire</span></li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="certificaciones" class="seccion">
+            <h2><span lang="es">Certificaciones</span><span lang="en">Certifications</span><span lang="fr">Certifications</span></h2>
+            <div class="rejilla">
+                <article class="tarjeta tarjeta--simple">
+                    <p class="emisor">Cisco Networking Academy</p>
+                    <h3>CCNA: Switching, Routing, and Wireless Essentials</h3>
+                    <p><span lang="es">Configuración de VLANs, enrutamiento, redes inalámbricas y seguridad en redes locales.</span><span lang="en">Networking fundamentals, architecture and how the Internet works.</span><span lang="fr">Bases des réseaux, architecture et fonctionnement d'Internet.</span></p>
+                    <p class="botones"><a class="btn btn--chico" href="imagenes/certificado_redes.png" target="_blank" rel="noopener"><span lang="es">Ver certificado</span><span lang="en">View certificate</span><span lang="fr">Voir le certificat</span></a></p>
+                </article>
+                <article class="tarjeta tarjeta--simple">
+                    <p class="emisor">Capacítate para el empleo | Fundación Carlos Slim</p>
+                    <h3>Finder</h3>
+                    <p><span lang="es">Búsqueda, filtrado y organización efectiva de información digital para la resolución de problemas en la web.</span><span lang="en">Effective searching, filtering, and organization of digital information for problem-solving on the web.</span><span lang="fr">Recherche, filtrage et organisation efficace de l'information numérique pour la résolution de problèmes sur le Web.</span></p>
+                    <p class="botones"><a class="btn btn--chico" href="imagenes/certificado_finder.png" target="_blank" rel="noopener"><span lang="es">Ver certificado</span><span lang="en">View certificate</span><span lang="fr">Voir le certificat</span></a></p>
+                </article>
+            </div>
+        </section>
+
+        <section id="cv" class="seccion seccion--centro">
+            <h2><span lang="es">Currículum</span><span lang="en">Résumé</span><span lang="fr">Curriculum vitæ</span></h2>
+            <p><span lang="es">Descarga mi CV en PDF para conocer mi formación, experiencia y habilidades.</span><span lang="en">Download my résumé as a PDF to learn more about my education, experience and skills.</span><span lang="fr">Téléchargez mon CV en PDF pour en savoir plus sur ma formation, mon expérience et mes compétences.</span></p>
+            <p class="botones"><a class="btn" href="pdf/CV_AnaPatriciaSanchezCastro.pdf" download><span lang="es">Descargar CV</span><span lang="en">Download résumé</span><span lang="fr">Télécharger le CV</span></a></p>
+        </section>
+
+        <section id="contacto" class="seccion seccion--centro">
+            <h2><span lang="es">Contacto</span><span lang="en">Contact</span><span lang="fr">Contact</span></h2>
+            <p><span lang="es">¿Quieres colaborar o saber más sobre mis proyectos? ¡Escríbeme!</span><span lang="en">Want to collaborate or learn more about my projects? Write to me.</span><span lang="fr">Vous souhaitez collaborer ou en savoir plus sur mes projets ? Écrivez-moi.</span></p>
+            <address class="contacto">
+                <span class="contacto__correo">anapatriciasanchez0808@gmail.com</span>                
+                <a href="https://github.com/Anasancz" target="_blank" rel="noopener">GitHub</a>
+            </address>
+        </section>
+
+        <div id="prototipo-tienda" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+            <a class="modal__fondo" href="#proyectos" tabindex="-1" aria-hidden="true"></a>
+            <div class="modal__contenido">
+                <a class="modal__cerrar" href="#proyectos"><span aria-hidden="true">✕</span><span class="sr-only"><span lang="es">Cerrar</span><span lang="en">Close</span><span lang="fr">Fermer</span></span></a>
+                <h3 id="modal-titulo"><span lang="es">Prototipo: Tienda web de repostería</span><span lang="en">Prototype: Bakery supplies web store</span><span lang="fr">Prototype : Boutique en ligne de pâtisserie</span></h3>
+                <div class="modal__imagenes">
+                    <figure>
+                        <img src="imagenes/dessertpop_inicio.png" alt="Prototipo de la tienda de repostería: página de inicio" width="600" height="400" loading="lazy">
+                    </figure>
+                    <figure>
+                        <img src="imagenes/dessertpop_catalogo.png" alt="Prototipo de la tienda de repostería: catálogo de productos" width="600" height="400" loading="lazy">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pie">
+        <p>© 2026 <span>Ana Patricia Sánchez Castro</span> <span lang="es">— Todos los derechos reservados</span><span lang="en">— All rights reserved</span><span lang="fr">— Tous droits réservés</span></p>
+    </footer>
+</body>
+</html>

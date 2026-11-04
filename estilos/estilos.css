@@ -1,0 +1,248 @@
+/*paleta de colores*/
+:root {
+    --fondo: #f5f0fd;
+    --fondo-alt: #ebe3fa;
+    --superficie: #ffffff;
+    --texto: #2d2545;
+    --texto-suave: #5f567a;
+    --primario: #7352c0;
+    --primario-hover: #5f40a8;
+    --sobre-primario: #ffffff;
+    --suave: #e3d8f7;
+    --borde: #d6c8f1;
+    --sombra: 0 6px 20px rgba(115, 82, 192, 0.15);
+    --alto-header: 70px;
+}
+
+body:has(#modo-oscuro:checked) {
+    --fondo: #1d1932;
+    --fondo-alt: #251f40;
+    --superficie: #2b2547;
+    --texto: #f1ecfb;
+    --texto-suave: #c5badf;
+    --primario: #b9a0f2;
+    --primario-hover: #cdb9f8;
+    --sobre-primario: #1d1932;
+    --suave: #3b3262;
+    --borde: #473e72;
+    --sombra: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/*Base*/
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: var(--alto-header); }
+
+body {
+    font-family: "Manjari", system-ui, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+ul { list-style: none; }
+a { color: var(--primario); }
+
+h1, h2, h3, .logo { font-family: "Momo Trust Display", sans-serif; line-height: 1.2; }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); text-align: center; margin-bottom: 2rem; }
+h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+
+:focus-visible { outline: 3px solid var(--primario); outline-offset: 3px; }
+
+.sr-only {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.salto {
+    position: absolute; left: 1rem; top: -4rem; z-index: 100;
+    background: var(--primario); color: var(--sobre-primario);
+    padding: 0.5rem 1rem; border-radius: 8px;
+}
+.salto:focus { top: 0.5rem; }
+
+/* ---------- Encabezado y menú ---------- */
+.header {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--superficie);
+    box-shadow: 0 2px 10px rgba(115, 82, 192, 0.12);
+}
+
+.header__barra {
+    max-width: 1200px; margin: auto; min-height: var(--alto-header);
+    padding: 0 1.25rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--primario); text-decoration: none; }
+
+.menu { display: flex; align-items: center; gap: 1.5rem; }
+.menu ul { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.menu a { color: var(--texto); text-decoration: none; font-weight: 500; padding: 0.25rem 0; border-bottom: 2px solid transparent; }
+.menu a:hover { border-bottom-color: var(--primario); color: var(--primario); }
+
+.ajustes { display: flex; align-items: center; gap: 0.5rem; }
+
+/* Selector de idioma (botones de opción ocultos + etiquetas) */
+.idiomas { display: flex; gap: 0.25rem; border: 0; }
+.idiomas label, .tema {
+    cursor: pointer; font-size: 0.9rem; line-height: 1.4;
+    color: var(--primario); background: var(--superficie);
+    border: 2px solid var(--primario); border-radius: 999px; padding: 0.2rem 0.7rem;
+}
+.idiomas input:checked + label { background: var(--primario); color: var(--sobre-primario); }
+input:focus-visible + label, input:focus-visible + .menu-btn { outline: 3px solid var(--primario); outline-offset: 3px; }
+
+/* Modo claro / oscuro (casilla oculta) */
+.tema .sol { display: none; }
+body:has(#modo-oscuro:checked) .tema .luna { display: none; }
+body:has(#modo-oscuro:checked) .tema .sol { display: inline; }
+
+/* Traducción: solo se muestra el idioma elegido */
+span[lang] { display: none; }
+body:has(#lang-es:checked) span[lang="es"],
+body:has(#lang-en:checked) span[lang="en"],
+body:has(#lang-fr:checked) span[lang="fr"] { display: inline; }
+
+/* Botón de menú móvil (casilla oculta) */
+.menu-btn {
+    display: none; font-size: 1.6rem; line-height: 1; cursor: pointer;
+    border: 2px solid var(--primario); color: var(--primario);
+    border-radius: 8px; padding: 0.2rem 0.6rem;
+}
+
+/* ---------- Secciones ---------- */
+.seccion { max-width: 1200px; margin: auto; padding: 4rem 1.25rem; }
+.seccion--centro { text-align: center; }
+.seccion--centro > p { max-width: 60ch; margin: 0 auto 1.5rem; color: var(--texto-suave); }
+#sobre-mi, #habilidades, #cv { max-width: none; background: var(--fondo-alt); }
+#sobre-mi > *, #habilidades > *, #cv > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
+#cv > p { max-width: 60ch; }
+
+/* ---------- Inicio ---------- */
+.hero {
+    max-width: 1200px; margin: auto; padding: 3rem 1.25rem;
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center;
+    min-height: calc(100vh - var(--alto-header));
+}
+.resalte { color: var(--primario); }
+.hero__rol { font-size: 1.25rem; font-weight: 600; margin: 0.75rem 0; }
+.hero__texto > p { color: var(--texto-suave); }
+.hero__foto img {
+    width: 100%; max-width: 400px; margin: auto;
+    aspect-ratio: 5 / 6; object-fit: cover;
+    border-radius: 24px; box-shadow: var(--sombra); border: 6px solid var(--suave);
+}
+
+.botones { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+.seccion--centro .botones { justify-content: center; }
+
+.btn {
+    display: inline-block; text-decoration: none; font-weight: 600;
+    background: var(--primario); color: var(--sobre-primario);
+    padding: 0.75rem 1.75rem; border-radius: 999px; border: 2px solid var(--primario);
+}
+.btn:hover { background: var(--primario-hover); border-color: var(--primario-hover); }
+.btn--borde { background: transparent; color: var(--primario); }
+.btn--borde:hover { background: var(--suave); color: var(--primario-hover); }
+.btn--chico { padding: 0.4rem 1.1rem; font-size: 0.9rem; }
+
+/* ---------- Sobre mí ---------- */
+.sobre { display: grid; gap: 1rem; max-width: 760px !important; text-align: justify; hyphens: auto; }
+
+/* ---------- Tarjetas ---------- */
+.rejilla { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1.5rem; }
+.rejilla--chica { grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+
+.tarjeta {
+    background: var(--superficie); border: 1px solid var(--borde);
+    border-radius: 18px; box-shadow: var(--sombra); overflow: hidden;
+    display: flex; flex-direction: column;
+}
+.tarjeta img { width: 100%; height: 200px; object-fit: cover; background: var(--suave); }
+.tarjeta__cuerpo { padding: 1.25rem; display: flex; flex-direction: column; flex: 1; }
+.tarjeta--simple { padding: 1.5rem; }
+.tarjeta p { color: var(--texto-suave); font-size: 0.95rem; }
+.tarjeta .botones { margin-top: auto; padding-top: 1rem; }
+.emisor { color: var(--primario) !important; font-weight: 600; }
+
+.etiquetas { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.75rem 0 0; }
+.etiquetas li {
+    background: var(--suave); color: var(--primario);
+    font-size: 0.85rem; font-weight: 500; padding: 0.15rem 0.8rem; border-radius: 999px;
+}
+.tarjeta__cuerpo .etiquetas { margin-bottom: 0.5rem; }
+
+/* ---------- Contacto y pie ---------- */
+.contacto { font-style: normal; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; font-weight: 500; }
+.contacto a { padding: 0.5rem 1.25rem; border: 2px solid var(--primario); border-radius: 999px; text-decoration: none; }
+.contacto a:hover { background: var(--suave); }
+
+.pie { background: var(--superficie); border-top: 1px solid var(--borde); text-align: center; padding: 1.5rem 1.25rem; font-size: 0.9rem; color: var(--texto-suave); }
+.pie span:first-child { color: var(--primario); font-weight: 600; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 900px) {
+    .menu-btn { display: block; }
+    .menu {
+        display: none; width: 100%; flex-direction: column; align-items: flex-start;
+        padding: 0.5rem 0 1.25rem; gap: 1rem;
+    }
+    body:has(#menu-check:checked) .menu { display: flex; }
+    .menu ul { flex-direction: column; gap: 0.5rem; width: 100%; }
+    .menu a { display: block; padding: 0.4rem 0; }
+
+    .hero { grid-template-columns: 1fr; min-height: auto; text-align: center; gap: 2rem; }
+    .hero__foto { order: -1; }
+    .hero__foto img { max-width: 280px; }
+    .hero .botones { justify-content: center; }
+    .seccion { padding: 3rem 1.25rem; }
+}
+
+@media (max-width: 480px) {
+    .sobre { text-align: left; }
+    .btn { width: 100%; text-align: center; }
+    .tarjeta .btn { width: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}
+/* Una sola tarjeta: evita que se estire a todo el ancho */
+.rejilla--una { grid-template-columns: minmax(0, 380px); justify-content: center; }
+/* ---------- Apartado del prototipo (se abre con :target, sin JS) ---------- */
+.modal {
+    display: none; position: fixed; inset: 0; z-index: 100;
+    align-items: center; justify-content: center; padding: 1rem;
+}
+.modal:target { display: flex; }
+.modal__fondo { position: absolute; inset: 0; background: rgba(29, 25, 50, 0.75); }
+.modal__contenido {
+    position: relative; width: min(100%, 900px); max-height: 100%; overflow-y: auto;
+    background: var(--superficie); color: var(--texto);
+    border: 1px solid var(--borde); border-radius: 18px; box-shadow: var(--sombra);
+    padding: 2.5rem 1.5rem 1.5rem;
+}
+.modal__contenido h3 { text-align: center; color: var(--primario); margin-bottom: 1.25rem; }
+.modal__cerrar {
+    position: absolute; top: 0.75rem; right: 0.75rem;
+    width: 2.25rem; height: 2.25rem; display: grid; place-items: center;
+    background: var(--primario); color: var(--sobre-primario);
+    border-radius: 50%; text-decoration: none; font-weight: 600;
+}
+.modal__cerrar:hover { background: var(--primario-hover); }
+.modal__imagenes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1rem; }
+.modal__imagenes img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--borde); }
+
+/* Imagen completa del prototipo */
+.modal__enlace { display: block; cursor: zoom-in; }
+.visor { z-index: 110; }
+.visor .modal__contenido { width: auto; max-width: 100%; padding: 2.75rem 0.75rem 0.75rem; }
+.visor .modal__contenido img { width: auto; max-width: 100%; max-height: 80vh; margin: auto; object-fit: contain; border-radius: 12px; }
+
+/* Correo como texto (sin botón) */
+.contacto__correo { padding: 0.5rem 0; color: var(--texto); }
