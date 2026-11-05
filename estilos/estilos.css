@@ -64,7 +64,7 @@ h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
 }
 .salto:focus { top: 0.5rem; }
 
-/* ---------- Encabezado y menú ---------- */
+/* Encabezado y menú */
 .header {
     position: sticky; top: 0; z-index: 50;
     background: var(--superficie);
@@ -80,12 +80,12 @@ h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
 
 .logo { font-size: 1.5rem; font-weight: 700; color: var(--primario); text-decoration: none; }
 
-.menu { display: flex; align-items: center; gap: 1.5rem; }
+.menu { display: flex; align-items: center; gap: 1.5rem; order: 2; margin-left: auto; }
 .menu ul { display: flex; gap: 1.25rem; flex-wrap: wrap; }
 .menu a { color: var(--texto); text-decoration: none; font-weight: 500; padding: 0.25rem 0; border-bottom: 2px solid transparent; }
 .menu a:hover { border-bottom-color: var(--primario); color: var(--primario); }
 
-.ajustes { display: flex; align-items: center; gap: 0.5rem; }
+.ajustes { display: flex; align-items: center; gap: 0.5rem; order: 3; }
 
 /* Selector de idioma (botones de opción ocultos + etiquetas) */
 .idiomas { display: flex; gap: 0.25rem; border: 0; }
@@ -108,14 +108,15 @@ body:has(#lang-es:checked) span[lang="es"],
 body:has(#lang-en:checked) span[lang="en"],
 body:has(#lang-fr:checked) span[lang="fr"] { display: inline; }
 
-/* Botón de menú móvil (casilla oculta) */
+/* Botón de menú móvil (enlaces que cambian el destino #; se cierra al elegir una sección) */
 .menu-btn {
     display: none; font-size: 1.6rem; line-height: 1; cursor: pointer;
-    border: 2px solid var(--primario); color: var(--primario);
+    border: 2px solid var(--primario); color: var(--primario); text-decoration: none;
     border-radius: 8px; padding: 0.2rem 0.6rem;
 }
+.ancla { position: fixed; top: 0; left: 0; width: 1px; height: 1px; visibility: hidden; pointer-events: none; }
 
-/* ---------- Secciones ---------- */
+/* Secciones */
 .seccion { max-width: 1200px; margin: auto; padding: 4rem 1.25rem; }
 .seccion--centro { text-align: center; }
 .seccion--centro > p { max-width: 60ch; margin: 0 auto 1.5rem; color: var(--texto-suave); }
@@ -123,7 +124,7 @@ body:has(#lang-fr:checked) span[lang="fr"] { display: inline; }
 #sobre-mi > *, #habilidades > *, #cv > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
 #cv > p { max-width: 60ch; }
 
-/* ---------- Inicio ---------- */
+/* Inicio */
 .hero {
     max-width: 1200px; margin: auto; padding: 3rem 1.25rem;
     display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center;
@@ -151,10 +152,10 @@ body:has(#lang-fr:checked) span[lang="fr"] { display: inline; }
 .btn--borde:hover { background: var(--suave); color: var(--primario-hover); }
 .btn--chico { padding: 0.4rem 1.1rem; font-size: 0.9rem; }
 
-/* ---------- Sobre mí ---------- */
+/* Sobre mí */
 .sobre { display: grid; gap: 1rem; max-width: 760px !important; text-align: justify; hyphens: auto; }
 
-/* ---------- Tarjetas ---------- */
+/* Tarjetas */
 .rejilla { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1.5rem; }
 .rejilla--chica { grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
 
@@ -177,7 +178,7 @@ body:has(#lang-fr:checked) span[lang="fr"] { display: inline; }
 }
 .tarjeta__cuerpo .etiquetas { margin-bottom: 0.5rem; }
 
-/* ---------- Contacto y pie ---------- */
+/* Contacto y pie */
 .contacto { font-style: normal; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; font-weight: 500; }
 .contacto a { padding: 0.5rem 1.25rem; border: 2px solid var(--primario); border-radius: 999px; text-decoration: none; }
 .contacto a:hover { background: var(--suave); }
@@ -185,14 +186,19 @@ body:has(#lang-fr:checked) span[lang="fr"] { display: inline; }
 .pie { background: var(--superficie); border-top: 1px solid var(--borde); text-align: center; padding: 1.5rem 1.25rem; font-size: 0.9rem; color: var(--texto-suave); }
 .pie span:first-child { color: var(--primario); font-weight: 600; }
 
-/* ---------- Responsivo ---------- */
+/* Responsivo */
 @media (max-width: 900px) {
-    .menu-btn { display: block; }
+    .header__barra { flex-wrap: wrap; gap: 0.5rem; }
+    .ajustes { order: 1; margin-left: auto; }
+    .menu-btn { display: block; order: 2; }
+    .menu-btn--cerrar { display: none; }
+    body:has(#menu-abierto:target) .menu-btn--abrir { display: none; }
+    body:has(#menu-abierto:target) .menu-btn--cerrar { display: block; }
     .menu {
         display: none; width: 100%; flex-direction: column; align-items: flex-start;
-        padding: 0.5rem 0 1.25rem; gap: 1rem;
+        padding: 0.5rem 0 1.25rem; gap: 1rem; order: 3; margin-left: 0;
     }
-    body:has(#menu-check:checked) .menu { display: flex; }
+    body:has(#menu-abierto:target) .menu { display: flex; }
     .menu ul { flex-direction: column; gap: 0.5rem; width: 100%; }
     .menu a { display: block; padding: 0.4rem 0; }
 
@@ -204,6 +210,12 @@ body:has(#lang-fr:checked) span[lang="fr"] { display: inline; }
 }
 
 @media (max-width: 480px) {
+    .header__barra { padding: 0 0.75rem; }
+    .logo { font-size: 1.1rem; }
+    .idiomas { gap: 0.15rem; }
+    .idiomas label, .tema { font-size: 0.8rem; padding: 0.1rem 0.4rem; }
+    .ajustes { gap: 0.25rem; }
+    .menu-btn { font-size: 1.4rem; padding: 0.15rem 0.5rem; }
     .sobre { text-align: left; }
     .btn { width: 100%; text-align: center; }
     .tarjeta .btn { width: auto; }
@@ -214,7 +226,7 @@ body:has(#lang-fr:checked) span[lang="fr"] { display: inline; }
 }
 /* Una sola tarjeta: evita que se estire a todo el ancho */
 .rejilla--una { grid-template-columns: minmax(0, 380px); justify-content: center; }
-/* ---------- Apartado del prototipo (se abre con :target, sin JS) ---------- */
+/* Apartado del prototipo (se abre con :target, sin JS) */
 .modal {
     display: none; position: fixed; inset: 0; z-index: 100;
     align-items: center; justify-content: center; padding: 1rem;

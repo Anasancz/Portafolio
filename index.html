@@ -17,8 +17,21 @@
         <div class="header__barra">
             <a class="logo" href="#inicio">Ana Sánchez</a>
 
-            <input type="checkbox" id="menu-check" class="sr-only">
-            <label for="menu-check" class="menu-btn"><span aria-hidden="true">☰</span><span class="sr-only">Menú</span></label>
+            <div class="ajustes">
+                <fieldset class="idiomas">
+                    <legend class="sr-only">Idioma / Language / Langue</legend>
+                    <input type="radio" name="idioma" id="lang-es" class="sr-only" checked><label for="lang-es">ES</label>
+                    <input type="radio" name="idioma" id="lang-en" class="sr-only"><label for="lang-en">EN</label>
+                    <input type="radio" name="idioma" id="lang-fr" class="sr-only"><label for="lang-fr">FR</label>
+                </fieldset>
+                <input type="checkbox" id="modo-oscuro" class="sr-only">
+                <label for="modo-oscuro" class="tema" title="Modo claro / oscuro">
+                    <span class="luna" aria-hidden="true">🌙</span><span class="sol" aria-hidden="true">☀️</span><span class="sr-only">Modo claro / oscuro</span>
+                </label>
+            </div>
+            <a class="menu-btn menu-btn--abrir" href="#menu-abierto"><span aria-hidden="true">☰</span><span class="sr-only"><span lang="es">Abrir menú</span><span lang="en">Open menu</span><span lang="fr">Ouvrir le menu</span></span></a>
+            <a class="menu-btn menu-btn--cerrar" href="#menu-cerrado"><span aria-hidden="true">✕</span><span class="sr-only"><span lang="es">Cerrar menú</span><span lang="en">Close menu</span><span lang="fr">Fermer le menu</span></span></a>
+            <span id="menu-abierto" class="ancla"></span><span id="menu-cerrado" class="ancla"></span>
 
             <nav class="menu" aria-label="Principal">
                 <ul>
@@ -30,18 +43,6 @@
                     <li><a href="#cv"><span lang="es">CV</span><span lang="en">Résumé</span><span lang="fr">CV</span></a></li>
                     <li><a href="#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span><span lang="fr">Contact</span></a></li>
                 </ul>
-                <div class="ajustes">
-                    <fieldset class="idiomas">
-                        <legend class="sr-only">Idioma / Language / Langue</legend>
-                        <input type="radio" name="idioma" id="lang-es" class="sr-only" checked><label for="lang-es">ES</label>
-                        <input type="radio" name="idioma" id="lang-en" class="sr-only"><label for="lang-en">EN</label>
-                        <input type="radio" name="idioma" id="lang-fr" class="sr-only"><label for="lang-fr">FR</label>
-                    </fieldset>
-                    <input type="checkbox" id="modo-oscuro" class="sr-only">
-                    <label for="modo-oscuro" class="tema" title="Modo claro / oscuro">
-                        <span class="luna" aria-hidden="true">🌙</span><span class="sol" aria-hidden="true">☀️</span><span class="sr-only">Modo claro / oscuro</span>
-                    </label>
-                </div>
             </nav>
         </div>
     </header>
