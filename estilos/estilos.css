@@ -57,6 +57,10 @@ h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
     clip: rect(0 0 0 0); white-space: nowrap;
 }
 
+/* Casillas y botones de opción ocultos: se fijan a la ventana para que el navegador no
+   desplace la página al enfocarlos (idioma y modo claro/oscuro) */
+.ajustes input { position: fixed; bottom: 0; left: 0; }
+
 .salto {
     position: absolute; left: 1rem; top: -4rem; z-index: 100;
     background: var(--primario); color: var(--sobre-primario);
@@ -199,6 +203,9 @@ body:has(#lang-fr:checked) span[lang="fr"] { display: inline; }
         padding: 0.5rem 0 1.25rem; gap: 1rem; order: 3; margin-left: 0;
     }
     body:has(#menu-abierto:target) .menu { display: flex; }
+    /* Con el menú abierto la página no se desplaza; si el menú es más alto que la pantalla, se desplaza solo el menú */
+    html:has(#menu-abierto:target) { overflow: hidden; scrollbar-gutter: stable; }
+    body:has(#menu-abierto:target) .menu { max-height: calc(100vh - var(--alto-header)); max-height: calc(100dvh - var(--alto-header)); overflow-y: auto; overscroll-behavior: contain; }
     .menu ul { flex-direction: column; gap: 0.5rem; width: 100%; }
     .menu a { display: block; padding: 0.4rem 0; }
 
